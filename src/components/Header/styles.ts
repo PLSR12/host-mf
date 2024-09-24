@@ -6,7 +6,8 @@ const { Text: TextAnt } = Typography;
 
 export const HeaderContainer = styled(HeaderAnt)`
 	display: flex;
-	justify-content: end;
+	justify-content: space-between;
+	width: 100%;
 	color: white;
 	background-color: #38592f;
 
@@ -19,6 +20,22 @@ export const HeaderContainer = styled(HeaderAnt)`
 		padding-left: 1rem;
 		padding-right: 1rem;
 	}
+`;
+
+export const LinksContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+	align-items: center;
+	a {
+		color: white !important;
+	}
+`;
+
+export const ProfileContainer = styled.div`
+	display: flex;
+	justify-content: end;
+	align-items: center;
 `;
 
 export const UserInfo = styled.div`

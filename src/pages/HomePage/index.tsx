@@ -4,7 +4,7 @@ import { LinkCardIcon } from "../../components/LinkCard";
 import { ILinkCardIconed } from "../../components/LinkCard/types";
 import { useAppSelector } from "../../hooks/store/useStore";
 import { IUser } from "../../types/IUser";
-import { FaBoxArchive } from "react-icons/fa6";
+import { MdPerson } from "react-icons/md";
 import React from "react";
 
 function HomePage() {
@@ -15,9 +15,9 @@ function HomePage() {
 	const homeCardsConfigFirstLine: ILinkCardIconed[] = [
 		{
 			to: "/remote",
-			icon: <FaBoxArchive size={80} />,
+			icon: <MdPerson size={80} />,
 			disabled: !user.username,
-			title: "Produtos",
+			title: "Usuários",
 		},
 	];
 

@@ -19,11 +19,9 @@ export default function Router(): ReactElement {
 					<Route path={NAVIGATION_CONSTANTS.HOME_APP} element={<HomePage />} />
 				</Route>
 
-				<Route path={"/remote/*"} element={<PrivateRoute />}>
+				<Route element={<PrivateRoute />}>
 					<Route path={"/remote/*"} element={<RemotePage />} />
 				</Route>
-
-				{/* <Route path="*" element={<NotFound />} /> */}
 			</Routes>
 		</Suspense>
 	);

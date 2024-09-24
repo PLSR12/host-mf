@@ -75,9 +75,11 @@ module.exports = (env, argv) => {
 					remote: process.env.REMOTE_PATH,
 				},
 				exposes: {
-					"./Button": "./src/components/Button.tsx",
+					"./Button": "./src/components/Button/index.tsx",
+					"./Loading": "./src/components/Loading/index.tsx",
 					"./hooks/useStore": "./src/hooks/useStore.ts",
-					"./hooks/useStoreSelector": "./src/hooks/useStoreSelector.ts",
+					"./hooks/useUser": "./src/hooks/useUser.ts",
+					"./hooks/useAppSelector": "./src/hooks/store/useStore.ts",
 					"./providers/StoreProvider": "./src/providers/StoreProvider.tsx",
 				},
 				shared: {

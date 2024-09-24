@@ -1,24 +1,16 @@
-// INFO (serif) : Product State Types
-export interface ProductItem {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  discountPercentage: number;
-  rating: number;
-  stock: number;
-  brand: string;
-  category: string;
-  thumbnail: string;
-  images: string[];
+// INFO (serif) : User State Types
+export interface IUser {
+	id: string;
+	username: string;
+	iat: number;
+	exp: number;
 }
-
-export interface ProductState {
-  products: ProductItem[];
+export interface UserState {
+	user: IUser;
 }
 
 // INFO (serif) : Counter State Types
 
 export interface CounterState {
-  value: number;
+	value: number;
 }

@@ -14,7 +14,7 @@ const PrivateRoute = () => {
 		return <AuthenticatedLayout>{children}</AuthenticatedLayout>;
 	}
 
-	console.log(user);
+	// console.log(user);
 
 	if (!isAuthenticated) {
 		return <LoginPage />;

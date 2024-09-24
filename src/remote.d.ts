@@ -6,7 +6,7 @@ declare module "remote/RemoteApp" {
 	export default RemotePage;
 }
 
-declare module "remote/TestPage" {
-	function TestPage(): JSX.Element;
-	export default TestPage;
+declare module "remote/UserPage" {
+	function UserPage(): JSX.Element;
+	export default UserPage;
 }
