@@ -12,13 +12,13 @@ const root = ReactDOMClient.createRoot(container!);
 
 root.render(
 	<StrictMode>
-		<StoreProvider>
-			<GlobalStyle />
-			<BrowserRouter>
+		<BrowserRouter>
+			<StoreProvider>
+				<GlobalStyle />
 				<PersistGate loading={null} persistor={persistor}>
 					<Router />
 				</PersistGate>
-			</BrowserRouter>
-		</StoreProvider>
+			</StoreProvider>
+		</BrowserRouter>
 	</StrictMode>
 );
