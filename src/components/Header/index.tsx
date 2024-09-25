@@ -18,15 +18,10 @@ export default function Header(): ReactElement {
 	const items: MenuProps["items"] = [
 		{
 			key: "1",
-			label: (
-				<span
-					onClick={() => {
-						handleLogout();
-					}}
-				>
-					Sair
-				</span>
-			),
+			label: <span>Sair</span>,
+			onClick: () => {
+				handleLogout();
+			},
 		},
 	];
 
