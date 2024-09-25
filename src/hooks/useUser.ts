@@ -18,6 +18,7 @@ export default function useUser() {
 		localStorage.removeItem("token");
 		localStorage.removeItem("userData");
 		dispatch(clearUser());
+		navigate(NAVIGATION_CONSTANTS.LOGIN);
 	};
 
 	const handleLogin = ({ name, password }: IBodyLogin) => {
