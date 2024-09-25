@@ -7,13 +7,28 @@ import {
 	TextStrong,
 	UserInfo,
 } from "./styles";
-import { Avatar, Space } from "antd";
+import { Avatar, Dropdown, MenuProps, Space } from "antd";
 import { IoPersonSharp } from "react-icons/io5";
 import React from "react";
 import useUser from "../../hooks/useUser";
 
 export default function Header(): ReactElement {
-	const { user } = useUser();
+	const { user, handleLogout } = useUser();
+
+	const items: MenuProps["items"] = [
+		{
+			key: "1",
+			label: (
+				<span
+					onClick={() => {
+						handleLogout();
+					}}
+				>
+					Sair
+				</span>
+			),
+		},
+	];
 
 	return (
 		<HeaderContainer>
@@ -21,16 +36,19 @@ export default function Header(): ReactElement {
 				<a href="/">Home</a>
 				<a href="/remote">Usuários</a>
 			</LinksContainer>
-
-			<ProfileContainer>
-				<Space size="small">
-					<Avatar src={<IoPersonSharp size={24} color={"white"} />} />
-					<UserInfo>
-						<Text>Bem-vindo(a)</Text>
-						<TextStrong>{user.username}</TextStrong>
-					</UserInfo>
-				</Space>
-			</ProfileContainer>
+			<Dropdown menu={{ items }} trigger={["click"]}>
+				<a onClick={(e) => e.preventDefault()}>
+					<ProfileContainer>
+						<Space size="small">
+							<Avatar src={<IoPersonSharp size={24} color={"white"} />} />
+							<UserInfo>
+								<Text>Bem-vindo(a)</Text>
+								<TextStrong>{user.username}</TextStrong>
+							</UserInfo>
+						</Space>
+					</ProfileContainer>
+				</a>
+			</Dropdown>
 		</HeaderContainer>
 	);
 }

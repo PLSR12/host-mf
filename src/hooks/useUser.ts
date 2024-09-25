@@ -10,9 +10,15 @@ export default function useUser() {
 	const user = useAppSelector<IUser>((state) => {
 		return state.user;
 	});
-	const { setUser } = userSlice.actions;
+	const { setUser, clearUser } = userSlice.actions;
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
+
+	const handleLogout = () => {
+		localStorage.removeItem("token");
+		localStorage.removeItem("userData");
+		dispatch(clearUser());
+	};
 
 	const handleLogin = ({ name, password }: IBodyLogin) => {
 		login({ name, password })
@@ -44,5 +50,6 @@ export default function useUser() {
 	return {
 		user,
 		handleLogin,
+		handleLogout,
 	};
 }
