@@ -41,7 +41,7 @@ export default function useUser() {
 					navigate(location.pathname);
 					return;
 				}
-				navigate(NAVIGATION_CONSTANTS.HOME_APP);
+				location.reload();
 			})
 			.catch((error) => {
 				console.log(error);
